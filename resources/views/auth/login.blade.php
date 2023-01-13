@@ -1,13 +1,29 @@
+<link href="{{asset('css/burbuja_Login.css') }}" rel="stylesheet">
+
+<head>
+
+</head>
 @extends('maestra')
 @section("titulo")
     Login
 @endsection
 @section('contenido')
-    <div class="row justify-content-center">
+
+    <div class="burbujas">
+            <div class="burbuja"></div>
+            <div class="burbuja">a</div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Login</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -57,6 +73,7 @@
                                 </div>
                             </div>
                         </div>
+                   
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
@@ -76,4 +93,5 @@
             </div>
         </div>
     </div>
+        </div>
 @endsection
