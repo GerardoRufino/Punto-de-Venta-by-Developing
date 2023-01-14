@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Roboto', 'Sans serif';
-}
-
 .contenedor{
     width: 90%;
     max-width: 1200px;
