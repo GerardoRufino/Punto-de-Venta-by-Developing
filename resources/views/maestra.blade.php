@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{env("APP_NAME")}}">
-    <meta name="author" content="Parzibyte">
+    <meta name="author" content="Developing">
     <title>@yield("titulo") - {{env("APP_NAME")}}</title>
     <link href="{{url("/css/bootstrap.min.css")}}" rel="stylesheet">
     <link href="{{url("/css/all.min.css")}}" rel="stylesheet">
@@ -27,15 +27,6 @@
     <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav mr-auto">
             @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">
-                        Registro
-                    </a>
-                </li>
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("home")}}">Inicio&nbsp;<i class="fa fa-home"></i></a>
@@ -85,7 +76,7 @@
     <span class="text-muted">Punto de venta en Laravel
         <i class="fa fa-code text-white"></i>
         por
-        <a class="text-white" href="//parzibyte.me/blog">Developing</a>
+        <a class="text-white" href="https://www.facebook.com/profile.php?id=100064063330986&mibextid=LQQJ4d">Developing</a>
         &nbsp;|&nbsp;
     </span>
 </footer>

@@ -20,8 +20,8 @@ Login
     <div class="burbuja"></div>
     <div class="wrapper fadeInDown">
         <div id="formContent">
-            <h2 id=SignIn class="active">Sign In</h2>
-            <h2 id=SingUp class="inactive underlineHover"><a href="{{ route('register') }}">Sign Up</a></h2>
+            <h2 id=SignIn class="active">Iniciar Sesión</h2>
+            <h2 id=SingUp class="inactive underlineHover"><a href="{{ route('register') }}">Registrate</a></h2>
             <div class="fadeIn first">
                 <img src="{{asset('img/user.png') }}" id="icon" alt="User Icon">
             </div>
