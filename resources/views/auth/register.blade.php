@@ -6,6 +6,7 @@
 Registrar
 @endsection
 @section('contenido')
+<body class="Color">
 <div class="burbujas">
     <div class="burbuja"></div>
     <div class="burbuja"></div>
@@ -17,7 +18,11 @@ Registrar
     <div class="burbuja"></div>
     <div class="burbuja"></div>
     <div class="burbuja"></div>
+    
     <div class="wrapper fadeInDown">
+    <div class="banner_imga">
+                <img src="{{asset('img/3.png') }}" alt="" >
+    </div>
         <div id="formContent">
             <h2 id=SignIn class="inactive underlineHover"><a href="{{ route('login') }}">Iniciar Sesión</a></h2>
             <h2 id=SingUp class="active">Registrate</h2>
@@ -51,4 +56,6 @@ Registrar
         </div>
     </div>
 </div>
+</body>
+
 @endsection

@@ -6,7 +6,8 @@
 Login
 @endsection
 @section('contenido')
-
+           
+<body class="Color">
 <div class="burbujas">
     <div class="burbuja"></div>
     <div class="burbuja"></div>
@@ -18,7 +19,11 @@ Login
     <div class="burbuja"></div>
     <div class="burbuja"></div>
     <div class="burbuja"></div>
+    
     <div class="wrapper fadeInDown">
+    <div class="banner_img">
+        <img src="{{asset('img/3.png') }}" alt="" >
+    </div>
         <div id="formContent">
             <h2 id=SignIn class="active">Iniciar Sesión</h2>
             <h2 id=SingUp class="inactive underlineHover"><a href="{{ route('register') }}">Registrate</a></h2>
@@ -53,7 +58,11 @@ Login
             @if (Route::has('password.request'))
             <a class="underlineHover" href="{{ route('password.request') }}">Forgot Password?</a>
             @endif
+        
         </div>
+        
     </div>
-</div>
+</div>  
+</body>
+
 @endsection
