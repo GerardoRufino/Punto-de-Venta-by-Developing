@@ -18,6 +18,7 @@ Auth::routes([
     "reset" => false,// no pueden olvidar contraseña
 ]);
 
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/home', 'HomeController@index')->name('home');
 // Permitir logout con petición get
 Route::get("/logout", function () {
