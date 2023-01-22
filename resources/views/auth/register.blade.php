@@ -21,7 +21,7 @@ Registrar
     
     <div class="wrapper fadeInDown">
     <div class="banner_imga">
-                <img src="{{asset('img/3.png') }}" alt="" >
+                <img src="{{asset('img/3.png') }}" class="d-none d-xl-block" alt="" >
     </div>
         <div id="formContent">
             <h2 id=SignIn class="inactive underlineHover"><a href="{{ route('login') }}">Iniciar Sesión</a></h2>

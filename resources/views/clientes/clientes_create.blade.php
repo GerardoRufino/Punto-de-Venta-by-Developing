@@ -4,7 +4,7 @@
 @section("contenido")
     <div class="row">
         <div class="col-12">
-            <h1>Agregar cliente</h1>
+            <h1>Agregar vendedor</h1>
             <form method="POST" action="{{route("clientes.store")}}">
                 @csrf
                 <div class="form-group">

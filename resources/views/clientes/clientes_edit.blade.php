@@ -4,7 +4,7 @@
 @section("contenido")
     <div class="row">
         <div class="col-12">
-            <h1>Editar cliente</h1>
+            <h1>Editar vendedor</h1>
             <form method="POST" action="{{route("clientes.update", [$cliente])}}">
                 @method("PUT")
                 @csrf

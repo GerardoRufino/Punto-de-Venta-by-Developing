@@ -4,7 +4,7 @@
 @section("contenido")
     <div class="row">
         <div class="col-12">
-            <h1>Clientes <i class="fa fa-users"></i></h1>
+            <h1>Vendedores <i class="fa fa-users"></i></h1>
             <a href="{{route("clientes.create")}}" class="btn btn-success mb-2">Agregar</a>
             @include("notificacion")
             <div class="table-responsive">

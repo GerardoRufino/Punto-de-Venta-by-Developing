@@ -21,8 +21,8 @@ Login
     <div class="burbuja"></div>
     
     <div class="wrapper fadeInDown">
-    <div class="banner_img">
-        <img src="{{asset('img/3.png') }}" alt="" >
+    <div class="banner_img"   >
+        <img src="{{asset('img/3.png') }}" class="d-none d-xl-block" alt="">
     </div>
         <div id="formContent">
             <h2 id=SignIn class="active">Iniciar Sesión</h2>
