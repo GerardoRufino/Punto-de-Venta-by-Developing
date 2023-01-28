@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return redirect()->route("home");
@@ -39,3 +39,7 @@ Route::middleware("auth")
         Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
         Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta")->name("terminarOCancelarVenta");
     });
+
+    Route::get('/admin', [AdminController::class,'index'])
+    ->middleware('auth.admin')
+    ->name('admin.index');

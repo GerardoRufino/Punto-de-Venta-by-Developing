@@ -15,7 +15,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view("usuarios.usuarios_index", ["usuarios" => User::all()]);
+        if(auth()->user()->role == 'admin')
+        {
+
+        }else{
+            return view("usuarios.usuarios_index", ["usuarios" => User::all()]);
+        }
     }
 
     /**
