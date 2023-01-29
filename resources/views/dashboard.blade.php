@@ -5,7 +5,9 @@ Inicio
 @endsection
 
 @section('content')
-
+<div class="col-sm-12 text-center mb-3">
+    <h1 class="m-0">Bienvenido, {{Auth::user()->name}}</h1>
+</div>
 <!-- Small boxes (Stat box) -->
 <div class="row">
     <div class="col-lg-3 col-6">

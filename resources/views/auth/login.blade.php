@@ -6,7 +6,6 @@
 Login
 @endsection
 @section('contenido')
-           
 <body class="Color">
 <div class="burbujas">
     <div class="burbuja"></div>
@@ -21,8 +20,8 @@ Login
     <div class="burbuja"></div>
     
     <div class="wrapper fadeInDown">
-    <div class="banner_img"   >
-        <img src="{{asset('img/3.png') }}" class="d-none d-xl-block" alt="">
+    <div class="banner_img">
+        <img src="{{asset('img/3.png') }}" class="d-none d-xl-block" >
     </div>
         <div id="formContent">
             <h2 id=SignIn class="active">Iniciar Sesión</h2>

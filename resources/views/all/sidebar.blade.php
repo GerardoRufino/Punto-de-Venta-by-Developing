@@ -6,7 +6,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Inicio</a>
+            <a href="{{route('dashboard') }}" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Acerca de</a>
@@ -41,6 +41,40 @@
                 <i class="fas fa-cog"></i>
             </a>
         </li>
+        @auth
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}" role="button">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </li>
+        @endauth
     </ul>
 </nav>
 <!-- /.navbar -->
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="brand-link ">
+                        <!-- <div> -->
+                        <img src="{{ asset('img/LogoSM.png') }}" alt="Ad" class="brand-image img-circle elevation-3" style="opacity: .8">
+                        <h1 class="brand-text font-weight-light text-dark">Refaccionaria <small>SAN MIGUEL</small></h1>
+                    </a>
+                    <!-- </div> -->
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="#">@yield('title')</a>
+                        </li>
+                        <li class="breadcrumb-item active">{{Auth::user()->role}}</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->

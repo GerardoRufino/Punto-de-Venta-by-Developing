@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    @yield('stylesheet')
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -27,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    @yield('stylesheet')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -35,59 +35,29 @@
         @include('all.sidebar')
         @include('all.navbar')
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <a class="brand-link ">
-                                <!-- <div> -->
-                                <img src="{{ asset('img/LogoSM.png') }}" alt="Ad" class="brand-image img-circle elevation-3" style="opacity: .8">
-                                <h1 class="brand-text font-weight-light text-dark">Refaccionaria <small>SAN MIGUEL</small></h1>
-                            </a>
-                            <!-- </div> -->
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item">
-                                    <a href="#">@yield('title')</a>
-                                </li>
-                                <li class="breadcrumb-item active">{{Auth::user()->name}}</li>
-                            </ol>
-                        </div><!-- /.col -->
-                        <div class="col-sm-12 text-center">
-                            <h1 class="m-0">Bienvenido, {{Auth::user()->name}}</h1>
-                        </div>
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                @yield('content')
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    @yield('content')
-
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2022-2023 <a target="_blank" href="https://github.com/GerardoRufino/Punto-de-Venta-by-Developing.git">{{ config('app.name', 'Laravel') }}</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.2.0
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022-2023 <a target="_blank" href="https://github.com/GerardoRufino/Punto-de-Venta-by-Developing.git">{{ config('app.name', 'Laravel') }}</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 1.2.0
-            </div>
-        </footer>
+    </footer>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
@@ -125,6 +95,7 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>
