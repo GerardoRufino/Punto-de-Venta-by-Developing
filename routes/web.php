@@ -30,10 +30,12 @@ Route::get("/logout", function () {
 Route::middleware("auth")
     ->group(function () {
         Route::resource("clientes", "ClientesController");
+        Route::resource("distribuidores", "DistribuidoresController");
         Route::resource("usuarios", "UserController")->parameters(["usuarios" => "user"]);
         Route::resource("productos", "ProductosController");
         Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
         Route::resource("ventas", "VentasController");
+        Route::resource("compras", "ComprasController");
         Route::get("/vender", "VenderController@index")->name("vender.index");
         Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
         Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");

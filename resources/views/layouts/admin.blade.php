@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- DataTable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/af-2.5.1/date-1.2.0/kt-2.8.0/sb-1.4.0/sp-2.1.0/datatables.min.css" />
     @yield('stylesheet')
 </head>
 
@@ -95,6 +97,8 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+    <!-- DataTable -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
     @yield('script')
 </body>
 

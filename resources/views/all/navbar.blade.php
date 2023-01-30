@@ -53,16 +53,10 @@
                                 <p>Reporte de Ventas</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-shopping-cart mr-2"></i>
-                                <p>Reporte de Compras</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('distribuidores.index') }}" class="nav-link">
                         <i class="fas fa-dolly-flatbed mr-2"></i>
                         <p>Provedores</p>
                     </a>
@@ -90,26 +84,10 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('compras.index') }}" class="nav-link">
                         <i class="fas fa-shopping-basket mr-2"></i>
-                        <p>Productos
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
+                        <p>Productos</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-shipping-fast mr-2"></i>
-                                <p>Vendidos</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-boxes mr-2"></i>
-                                <p>Stock</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
