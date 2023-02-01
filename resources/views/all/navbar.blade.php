@@ -104,13 +104,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="	fas fa-suitcase mr-2"></i>
-                                <p>Departamentos</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('usuarios.index') }}" class="nav-link">
                                 <i class="fas fa-user-cog mr-2"></i>
                                 <p>Empleados</p>
                             </a>
