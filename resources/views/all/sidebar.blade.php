@@ -9,7 +9,7 @@
             <a href="{{route('dashboard') }}" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Acerca de</a>
+            <a href="#" class="nav-link">Acerca de </a>
         </li>
     </ul>
 
