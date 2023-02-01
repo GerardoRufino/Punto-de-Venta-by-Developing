@@ -62,7 +62,7 @@
                     <a class="brand-link ">
                         <!-- <div> -->
                         <img src="{{ asset('img/LogoSM.png') }}" alt="Ad" class="brand-image img-circle elevation-3" style="opacity: .8">
-                        <h1 class="brand-text font-weight-light text-dark"><small>{{ config('app.title', 'Laravel') }}</small></h1>
+                        <h1 class="brand-text font-weight-light text-dark">Refaccionaria <small>SAN MIGUEL</small></h1>
                     </a>
                     <!-- </div> -->
                 </div>

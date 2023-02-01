@@ -9,12 +9,13 @@ Ventas
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 <link rel="stylesheet" href="libs/css/">
 <link rel="stylesheet" href="{{ asset('plugins/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css') }}">
+<link rel="stylesheet" href= "https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 @endsection
 
 @section('content')
 <div class="row justify-content-end ">
     <div class="col-5 text-center">
-        <p class="lead">
+        <p class="lead d-none d-sm-block">
             Busqueda filtrada por fecha
         </p>
     </div>
@@ -22,7 +23,7 @@ Ventas
 <div class="row justify-content-end">
     <div class="col-7">
         <a class="btn btn-danger" href="#">
-            <i class="fas fa-file-pdf mr-2"></i>
+            <i class="fas fa-file-pdf mr-2 "></i>
             Generar PDF
         </a>
     </div>
