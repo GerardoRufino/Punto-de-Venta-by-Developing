@@ -44,8 +44,8 @@ Empleados
                         <td>{{$usuario->email}}</td>
                         <td>{{$usuario->role}}</td>
                         <td>
-                            <a class="btn btn-warning" href="#">
-                                <i class="fa fa-edit"></i>
+                            <a class="btn btn-success" href="#">
+                                <i class="fas fa-users"></i>
                             </a>
                         </td>
                         <td>
