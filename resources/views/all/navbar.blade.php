@@ -99,12 +99,6 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="fas fa-cogs mr-2"></i>
-                                <p>General</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
                                 <i class="	fas fa-suitcase mr-2"></i>
                                 <p>Departamentos</p>
                             </a>

@@ -15,6 +15,19 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+     /*
+    |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the title of your application. This value is used when the
+    | framework needs to place the application's title in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'title' => env('APP_TITLE', 'Laravel'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
