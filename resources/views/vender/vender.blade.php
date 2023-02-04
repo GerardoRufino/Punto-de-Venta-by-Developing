@@ -14,7 +14,7 @@
                             <label for="id_cliente">Cliente</label>
                             <select required class="form-control" name="id_cliente" id="id_cliente">
                                 @foreach($clientes as $cliente)
-                                    <option value="{{$cliente->id}}">{{$cliente->nombre}}</option>
+                                    <option value="{{$cliente->id}}">{{Auth::user()->name}}</option>
                                 @endforeach
                             </select>
                         </div>
