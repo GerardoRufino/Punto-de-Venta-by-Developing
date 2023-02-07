@@ -98,12 +98,6 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-cogs mr-2"></i>
-                                <p>General</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{route('usuarios.index') }}" class="nav-link">
                                 <i class="fas fa-user-cog mr-2"></i>
                                 <p>Empleados</p>
