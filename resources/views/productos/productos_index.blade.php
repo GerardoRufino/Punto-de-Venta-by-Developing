@@ -1,3 +1,4 @@
+
 @extends("maestra")
 
 @section('titulo')
@@ -64,8 +65,7 @@ Productos
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
+
 @endsection
 
 
@@ -73,6 +73,8 @@ Productos
 <!-- DataTable -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+@section("script")
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function() {
         $('#table_id').DataTable({
@@ -82,5 +84,4 @@ Productos
         });
     });
 </script>
-
 @endsection

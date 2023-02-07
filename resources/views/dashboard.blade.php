@@ -79,7 +79,7 @@ Inicio
                     <i class="fas fa-chart-pie mr-1"></i>
                     Sales
                 </h3>
-                <div class="card-tools">
+                <!-- <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
                             <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
@@ -88,7 +88,7 @@ Inicio
                             <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div><!-- /.card-header -->
             <div class="card-body">
                 <div class="tab-content p-0">
@@ -96,9 +96,9 @@ Inicio
                     <div class="chart">
                         <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
-                    <div class="card-body">
+                    <!-- <div class="card-body">
                         <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
+                    </div> -->
                 </div>
             </div><!-- /.card-body -->
         </div>
