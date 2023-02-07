@@ -32,6 +32,11 @@
                     <input required autocomplete="off" name="existencia" class="form-control"
                            type="decimal(9,2)" placeholder="Existencia">
                 </div>
+                <div class="form-group">
+                    <label class="label">Imagen</label>
+                    <input type="file" required autocomplete="off" name="imagen" class="form-control"
+                           type="decimal(9,2)" placeholder="Imagen">
+                </div>
                 
 
                 @include("notificacion")

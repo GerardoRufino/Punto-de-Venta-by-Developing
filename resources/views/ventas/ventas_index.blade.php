@@ -15,7 +15,7 @@ Ventas
 @section('content')
 <div class="row justify-content-end ">
     <div class="col-5 text-center">
-        <p class="lead d-none d-sm-block">
+        <p class="lead d-none d-sm-block d-none d-sm-block">
             Busqueda filtrada por fecha
         </p>
     </div>

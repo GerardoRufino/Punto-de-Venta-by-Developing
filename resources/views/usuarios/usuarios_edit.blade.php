@@ -16,7 +16,7 @@
                 <input required value="{{$usuario->email}}" name="email" class="form-control" type="text" placeholder="Correo electronico">
             </div>
             <div class="form-group">
-                <label class="label">Dirección</label>
+                <label class="label">Contraseña</label>
                 <input required value="{{$usuario->password}}" name="password" class="form-control" type="password" placeholder="Contraseña">
             </div>
             @include("notificacion")
