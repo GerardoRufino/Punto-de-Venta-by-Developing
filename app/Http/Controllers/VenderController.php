@@ -1,24 +1,4 @@
 <?php
-/*   _____                                       __
-    |      \     _______  __        __  _______ | |   ______    ________
-    |       \   |  ____/  \ \      / / |  ____/ | |  |  __  |  |   __  |
-    |        |  | |____|   \ \    / /  | |____/ | |  | |  | |  |  | |  |
-    |       /   | |____     \ \_/ /    | |____  | |  | |__| |  |  |_|  | 
-    |_____/     |_____/      \___/     |_____/  |_|  |______|  |   ____|
-                                                               |  |
-                                                               |  |                                                     
-                                                               |__|
-                            
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-
-    Copyright (c) 2020 Luis Cabrera Benito
-    Licenciado bajo la licencia MIT
-
-    El texto de arriba debe ser incluido en cualquier redistribucion
-*/ ?>
-<?php
 
 namespace App\Http\Controllers;
 
