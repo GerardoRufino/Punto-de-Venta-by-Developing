@@ -1,24 +1,5 @@
 <?php
-/*
-
-  ____          _____               _ _           _
- |  _ \        |  __ \             (_) |         | |
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |
-        |___/                               |___/
-
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-
-    Copyright (c) 2020 Luis Cabrera Benito
-    Licenciado bajo la licencia MIT
-
-    El texto de arriba debe ser incluido en cualquier redistribucion
-*/ ?>
+?>
 <?php
 
 namespace App\Http\Controllers;
@@ -31,6 +12,12 @@ use Mike42\Escpos\Printer;
 
 class VentasController extends Controller
 {
+    public function PDF()
+    {
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadView('ventas.pdf');
+        return $pdf->stream();
+    }
 
     public function ticket(Request $request)
     {
@@ -83,7 +70,7 @@ class VentasController extends Controller
             ->get();
         return view("ventas.ventas_index", ["ventas" => $ventasConTotales,]);
     }
-
+   
     /**
      * Show the form for creating a new resource.
      *

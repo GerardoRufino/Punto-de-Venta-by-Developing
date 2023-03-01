@@ -22,7 +22,7 @@ Ventas
 </div>
 <div class="row justify-content-end">
     <div class="col-7">
-        <a class="btn btn-danger" href="#">
+        <a class="btn btn-danger" href="pdf" target="_blank">
             <i class="fas fa-file-pdf mr-2 "></i>
             Generar PDF
         </a>
