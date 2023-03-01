@@ -17,10 +17,10 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->string("codigo_barras");
             $table->string("descripcion");
-            $table->decimal("precio_compra", 9, 2);
-            $table->decimal("precio_venta", 9, 2);
-            $table->decimal("existencia", 9, 2);
-            $table->string('url_img')->->nullable();
+            $table->decimal("precio_compra");
+            $table->decimal("precio_venta");
+            $table->integer("existencia");
+            $table->string('url_img')->nullable();
             $table->timestamps();
         });
     }

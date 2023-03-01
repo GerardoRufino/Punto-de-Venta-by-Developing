@@ -10,9 +10,8 @@
                 <form action="{{route("terminarOCancelarVenta")}}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="id_cliente">Cliente</label>
-                        <input id="Cname"  required autofocus name="Cname" type="text" class="form-control mb-3" placeholder="Nombre">
-                        <input id="Clastname"  required autofocus name="Clastname" type="text" class="form-control" placeholder="Apellido">
+                        <label for="inputcliente">Cliente</label>
+                        <input id="inputcliente" autofocus name="cliente" type="text" class="form-control mb-3" placeholder="Nombre">
                     </div>
                     @if(session("productos") !== null)
                     <div class="form-group">
@@ -72,9 +71,7 @@
             </table>
         </div>
         @else
-        <h2>Aquí aparecerán los productos de la venta
-            <br>
-            Escanea el código de barras o escribe y presiona Enter
+        <h2><br>Escanea el código de barras o escribe y presiona Enter
         </h2>
         @endif
     </div>
