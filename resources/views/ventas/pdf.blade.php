@@ -16,7 +16,17 @@
                         <th>Total</th>
                     </tr>
                 </thead>
-                
+                <tbody>
+                @foreach($productos as $producto)
+                    <tr>
+                        <td>{{$producto->codigo_barras}}</td>
+                        <td>{{$producto->descripcion}}</td>
+                        <td>{{$producto->precio_compra}}</td>
+                        <td>{{$producto->precio_venta}}</td>
+                        <td>{{$producto->existencia}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
             </table>
     
 </body>
