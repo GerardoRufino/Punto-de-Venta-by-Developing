@@ -2,6 +2,8 @@
 @extends('layouts.admin')
 @section("titulo", "Editar usuario")
 @section('content')
+
+
 <div class="row">
     <div class="col-12">
         <form method="POST" action="{{route("usuarios.update", [$usuario])}}">

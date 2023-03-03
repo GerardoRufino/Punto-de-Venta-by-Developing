@@ -49,9 +49,12 @@ Empleados
                             </a>
                         </td>
                         <td>
-                            <a class="btn btn-warning" href="{{route('usuarios.edit',[$usuario])}}">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fa fa-edit"></i>
+                            </button>
+                            <!-- <a class="btn btn-warning" href="{{route('usuarios.edit',[$usuario])}}">
                                 <i class="fa fa-edit"></i>
-                            </a>
+                            </a> -->
                         </td>
                         <td>
                             <form action="{{route('usuarios.destroy', [$usuario])}}" method="post">
@@ -69,6 +72,48 @@ Empleados
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+    <div class="col-12">
+        <form method="POST" action="{{route("usuarios.update", [$usuario])}}">
+            @method("PUT")
+            @csrf
+            <div class="form-group">
+                <label class="label">Nombre</label>
+                <input required value="{{$usuario->name}}" name="name" class="form-control" type="text" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label class="label">Teléfono</label>
+                <input required value="{{$usuario->email}}" name="email" class="form-control" type="text" placeholder="Correo electronico">
+            </div>
+            <div class="form-group">
+                <label class="label">Contraseña</label>
+                <input required value="{{$usuario->password}}" name="password" class="form-control" type="password" placeholder="Contraseña">
+            </div>
+            @include("notificacion")
+            <button class="btn btn-success">Guardar</button>
+            <a class="btn btn-primary" href="{{route("usuarios.index")}}">Volver</a>
+        </form>
+    </div>
+</div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('script')
@@ -83,4 +128,5 @@ Empleados
         });
     });
 </script>
+
 @endsection
