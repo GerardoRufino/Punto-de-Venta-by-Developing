@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Venta;
+use App\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
@@ -10,6 +11,12 @@ use Mike42\Escpos\Printer;
 
 class VentasController extends Controller
 {
+    public function PDF()
+    {
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadView('ventas.pdf', ["productos" => Producto::all()]);
+        return $pdf->stream();
+    }
 
     public function ticket(Request $request)
     {
@@ -23,7 +30,7 @@ class VentasController extends Controller
         $impresora->text($venta->created_at . "\n");
         $impresora->setEmphasis(false);
         $impresora->text("Cliente: ");
-        $impresora->text($venta->cliente->nombre . "\n");
+        // $impresora->text($venta->cliente->nombre . "\n");
         $impresora->text("\nhttps://parzibyte.me/blog\n");
         $impresora->text("\n===============================\n");
         $total = 0;
@@ -62,7 +69,7 @@ class VentasController extends Controller
             ->get();
         return view("ventas.ventas_index", ["ventas" => $ventasConTotales,]);
     }
-
+   
     /**
      * Show the form for creating a new resource.
      *
