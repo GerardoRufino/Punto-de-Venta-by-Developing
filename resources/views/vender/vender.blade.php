@@ -1,9 +1,12 @@
-@extends("maestra")
-@section("titulo", "Realizar venta")
-@section("contenido")
+@extends('layouts.admin')
+
+@section('title')
+Realizar venta
+@endsection
+
+@section ('content')
 <div class="row">
     <div class="col-12">
-        <h1>Nueva venta<i class="fa fa-cart-plus"></i></h1>
         @include("notificacion")
         <div class="row">
             <div class="col-12 col-md-6">

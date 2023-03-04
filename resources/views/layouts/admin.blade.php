@@ -34,8 +34,17 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        @include('all.sidebar')
-        @include('all.navbar')
+        @if(Auth::user()->hasRole('admin'))
+        @include('all.sidebar_admin')
+        @elseif(Auth::user()->hasRole('user'))
+        @include('all.sidebar_user')
+        @endif
+
+        @if(Auth::user()->hasRole('admin'))
+        @include('all.navbar_admin')
+        @elseif(Auth::user()->hasRole('user'))
+        @include('all.navbar_user')
+        @endif
 
         <!-- Main content -->
         <section class="content">
@@ -100,6 +109,25 @@
     <!-- DataTable -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
     @yield('script')
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

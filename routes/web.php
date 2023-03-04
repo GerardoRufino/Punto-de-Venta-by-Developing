@@ -33,6 +33,7 @@ Route::middleware("auth")
         Route::resource("distribuidores", "DistribuidoresController");
         Route::resource("usuarios", "UserController")->parameters(["usuarios" => "user"]);
         Route::resource("productos", "ProductosController");
+        Route::get('/editar-producto/{id}', 'ProductosController@edit');
         Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
         Route::resource("ventas", "VentasController");
         Route::resource("compras", "ComprasController");

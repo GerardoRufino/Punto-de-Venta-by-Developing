@@ -57,10 +57,10 @@ class ProductosController extends Controller
      * @param \App\Producto $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        return view("productos.productos_edit", ["producto" => $producto,
-        ]);
+        $producto = Producto::find($id);
+        return view('productos.productos_edit', compact('producto'));
     }
 
     /**
