@@ -3,22 +3,16 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 
-class AdminAuth
+class CheckRole
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
-    public function handle($request, Closure $next) {
-        if(auth()->check()){
-            if(auth()-> user()-> role == 'admin') {
-                return redirect()->to('/dashboard');
-            }
+    public function handle(Request $request, Closure $next, $role)
+    {
+        if ($request->user()->role !== $role) {
+            abort(403, 'No tienes autorización para acceder a esta página.');
         }
-        // return $next($request);
+
+        return $next($request);
     }
 }

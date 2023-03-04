@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        return redirect()->action('VenderController@index');
+        if ($request->user()->hasRole('admin')) {
+            return redirect()->action('DashboardController@index');
+        } elseif ($request->user()->hasRole('user')) {
+            return redirect()->action('VenderController@index');
+        }
     }
 }
