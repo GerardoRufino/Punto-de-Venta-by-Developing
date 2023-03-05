@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
     <!-- DataTable -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/af-2.5.1/date-1.2.0/kt-2.8.0/sb-1.4.0/sp-2.1.0/datatables.min.css" />
+    <!-- SweetAlert -->
+    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
     @yield('stylesheet')
 </head>
 
@@ -72,6 +75,12 @@
     </div>
     <!-- ./wrapper -->
 
+    <!-- SweetAlert -->
+    <script src="{{ asset('plugins/sweetalert2/sweetalert2.all.js') }} "></script>
+    <script src="{{ asset('plugins/sweetalert2/sweetalert2.all.min.js') }} "></script>
+    <script src="{{ asset('plugins/sweetalert2/sweetalert2.js') }} "></script>
+    <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }} "></script>
+
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -110,6 +119,61 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
     @yield('script')
 
+    <!-- SweetAlert -->
+    @if (session('alert'))
+    <script>
+        var type = "{{ session('alert.type') }}";
+        var menssage = "{{ session('alert.message') }}";
+        Swal.fire({
+            icon: type,
+            title: menssage,
+            showConfirmButton: false,
+            timer: 2000
+        })
+    </script>
+    @endif
+
+    @if (session('alert_notfound'))
+    <script>
+        var type = "{{ session('alert_notfound.type') }}";
+        var menssage = "{{ session('alert_notfound.message') }}";
+        Swal.fire({
+            icon: type,
+            title: menssage,
+            showConfirmButton: false,
+            toast: true,
+            timer: 3000
+        })
+    </script>
+    @endif
+
+    <script type="text/javascript">
+        $('#eliminar').submit(function(event) {
+            event.preventDefault();
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'Estas seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '¡Sí, bórralo!',
+                cancelButtonText: '¡No, cancelar!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit();
+                }
+            })
+        });
+    </script>
+    
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

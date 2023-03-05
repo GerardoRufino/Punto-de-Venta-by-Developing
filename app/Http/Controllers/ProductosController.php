@@ -37,7 +37,12 @@ class ProductosController extends Controller
     {
         $producto = new Producto($request->input());
         $producto->saveOrFail();
-        return redirect()->route("productos.index")->with("mensaje", "Producto guardado");
+        return redirect()->route("productos.index")->
+        with('alert', [
+            'type' => 'success',
+            'message' => '¡El producto se ha creado con éxito!'
+        ]);
+
     }
 
     /**
@@ -74,7 +79,11 @@ class ProductosController extends Controller
     {
         $producto->fill($request->input());
         $producto->saveOrFail();
-        return redirect()->route("productos.index")->with("mensaje", "Producto actualizado");
+        return redirect()->route("productos.index")->
+        with('alert', [
+            'type' => 'success',
+            'message' => '¡Producto actualizado con éxito!'
+        ]);
     }
 
     /**
@@ -86,6 +95,10 @@ class ProductosController extends Controller
     public function destroy(Producto $producto)
     {
         $producto->delete();
-        return redirect()->route("productos.index")->with("mensaje", "Producto eliminado");
+        return redirect()->route("productos.index")->
+        with('alert', [
+            'type' => 'error',
+            'message' => '¡Producto eliminado con éxito!'
+        ]);
     }
 }

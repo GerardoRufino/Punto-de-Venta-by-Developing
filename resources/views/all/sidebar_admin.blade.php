@@ -62,7 +62,7 @@
                     <a class="brand-link ">
                         <!-- <div> -->
                         <img src="{{ asset('img/LogoSM.png') }}" alt="Ad" class="brand-image img-circle elevation-3" style="opacity: .8">
-                        <h1 class="brand-text font-weight-light text-dark d-none d-sm-block" ><small>{{ config('app.title', 'Laravel')}}</small></h1>
+                        <h1 class="brand-text font-weight-light text-dark d-none d-sm-block"><small>{{ config('app.title', 'Laravel')}}</small></h1>
                     </a>
                     <!-- </div> -->
                 </div>
@@ -71,7 +71,7 @@
                         <li class="breadcrumb-item">
                             <a href="#">@yield('title')</a>
                         </li>
-                        <li class="breadcrumb-item active">{{Auth::user()->role}}</li>
+                        <li class="breadcrumb-item active">{{ auth()->user()->roles()->first()->description }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->

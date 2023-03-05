@@ -17,7 +17,7 @@
         @auth
         <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}" role="button">
-                Cerrar Sesión 
+                Cerrar Sesión
                 <i class="fas fa-sign-out-alt ml-1"></i>
             </a>
         </li>
@@ -45,7 +45,7 @@
                         <li class="breadcrumb-item">
                             <a href="#">@yield('title')</a>
                         </li>
-                        <li class="breadcrumb-item active">{{Auth::user()->role}}</li>
+                        <li class="breadcrumb-item active">{{ auth()->user()->roles()->first()->description }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->

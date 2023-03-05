@@ -49,7 +49,10 @@ class VenderController extends Controller
         $this->vaciarProductos();
         return redirect()
             ->route("vender.index")
-            ->with("mensaje", "Venta terminada");
+            ->with('alert', [
+            'type' => 'success',
+            'message' => '¡La venta se ha realizado con éxito!'
+        ]);
     }
 
     private function obtenerProductos()
@@ -77,7 +80,10 @@ class VenderController extends Controller
         $this->vaciarProductos();
         return redirect()
             ->route("vender.index")
-            ->with("mensaje", "Venta cancelada");
+            ->with('alert', [
+            'type' => 'error',
+            'message' => '¡La venta ha sido cancelada'
+        ]);
     }
 
     public function quitarProductoDeVenta(Request $request)
@@ -97,7 +103,10 @@ class VenderController extends Controller
         if (!$producto) {
             return redirect()
                 ->route("vender.index")
-                ->with("mensaje", "Producto no encontrado");
+                ->with('alert', [
+                'type' => 'success',
+                'message' => '¡El producto se ha guardado con éxito!'
+            ]);
         }
         $this->agregarProductoACarrito($producto);
         return redirect()
@@ -108,11 +117,11 @@ class VenderController extends Controller
     {
         if ($producto->existencia <= 0) {
             return redirect()->route("vender.index")
-                ->with([
-                    "mensaje" => "No hay existencias del producto",
-                    "tipo" => "danger"
-                ]);
-        }
+                ->with('alert_notfound', [
+                'type' => 'warning',
+                'message' => '¡No hay existencias del producto!'
+            ]);
+            }
         $productos = $this->obtenerProductos();
         $posibleIndice = $this->buscarIndiceDeProducto($producto->codigo_barras, $productos);
         // Es decir, producto no fue encontrado
@@ -122,9 +131,9 @@ class VenderController extends Controller
         } else {
             if ($productos[$posibleIndice]->cantidad + 1 > $producto->existencia) {
                 return redirect()->route("vender.index")
-                    ->with([
-                        "mensaje" => "No se pueden agregar más productos de este tipo, se quedarían sin existencia",
-                        "tipo" => "danger"
+                    ->with('alert_notfound', [
+                'type' => 'warning',
+                'message' => '¡No se pueden agregar más productos de este tipo, se quedarían sin existencia!'
                     ]);
             }
             $productos[$posibleIndice]->cantidad++;

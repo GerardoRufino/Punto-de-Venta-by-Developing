@@ -59,7 +59,7 @@ Realizar venta
                         <td>${{number_format($producto->precio_venta, 2)}}</td>
                         <td>{{$producto->cantidad}}</td>
                         <td>
-                            <form action="{{route("quitarProductoDeVenta")}}" method="post">
+                            <form id="eliminar" action="{{route("quitarProductoDeVenta")}}" method="post">
                                 @method("delete")
                                 @csrf
                                 <input type="hidden" name="indice" value="{{$loop->index}}">

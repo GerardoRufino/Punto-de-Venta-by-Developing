@@ -11,7 +11,6 @@ Productos
 </button>
 <div class="row">
     <div class="col-12">
-        @include("notificacion")
         <div class="table-responsive">
             <table id="table_id" class="table table-bordered display nowrap">
                 <thead>
@@ -45,16 +44,15 @@ Productos
                             </button>
                         </td>
                         <td>
-                            <form action="{{route('productos.destroy', [$producto])}}" method="post">
+                            <form id="eliminar" action="{{route('productos.destroy', [$producto])}}" method="post">
                                 @method("delete")
                                 @csrf
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" id="alert" class="btn btn-danger">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </form>
                         </td>
                     </tr>
-
                     @endforeach
                 </tbody>
             </table>
@@ -97,13 +95,10 @@ Productos
                                     </div>
                                     <div class="form-group">
                                         <label class="label">Imagen</label>
-                                        <input type="file" required autocomplete="off" name="imagen" class="form-control" type="decimal(9,2)" placeholder="Imagen">
+                                        <input type="file" autocomplete="off" name="imagen" class="form-control" type="decimal(9,2)" placeholder="Imagen">
                                     </div>
-
-
-                                    @include("notificacion")
                                     <button class="btn btn-success">Guardar</button>
-                                    <a class="btn btn-primary" href="{{route("productos.index")}}">Volver al listado</a>
+                                    <a class="btn btn-danger" href="{{route("productos.index")}}">Cancelar</a>
                                 </form>
                             </div>
                         </div>
@@ -118,67 +113,22 @@ Productos
 
         <!-- Modal Editar Producto-->
 
-        <div class="modal fade" id="exampleModalE" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Editar producto</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <form method="POST" action="{{ route('productos.update', $producto->id) }}">
-                                    @method("PUT")
-                                    @csrf
-                                    <div class="form-group">
-                                        <label class="label">Código de barras</label>
-                                        <input required value="{{$producto->codigo_barras}}" autocomplete="off" name="codigo_barras" class="form-control" type="text" placeholder="Código de barras">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="label">Descripción</label>
-                                        <input required value="{{$producto->descripcion}}" autocomplete="off" name="descripcion" class="form-control" type="text" placeholder="Descripción">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="label">Precio de compra</label>
-                                        <input required value="{{$producto->precio_compra}}" autocomplete="off" name="precio_compra" class="form-control" type="decimal(9,2)" placeholder="Precio de compra">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="label">Precio de venta</label>
-                                        <input required value="{{$producto->precio_venta}}" autocomplete="off" name="precio_venta" class="form-control" type="decimal(9,2)" placeholder="Precio de venta">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="label">Existencia</label>
-                                        <input required value="{{$producto->existencia}}" autocomplete="off" name="existencia" class="form-control" type="decimal(9,2)" placeholder="Existencia">
-                                    </div>
-
-                                    @include("notificacion")
-                                    <button class="btn btn-success">Guardar</button>
-                                    <a class="btn btn-danger" href="{{route("productos.index")}}">Cancelar</a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endsection
+    </div>
+    @endsection
 
 
-        @section("script")
-        <script>
-            $(document).ready(function() {
-                $('#table_id').DataTable({
-                    responsive: true,
-                    "language": {
-                        "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-                    },
-                });
+    @section("script")
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable({
+                responsive: true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+                },
             });
-        </script>
-        @endsection
+        });
+    </script>
+
+    
+
+    @endsection
