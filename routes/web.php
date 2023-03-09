@@ -42,8 +42,7 @@ Route::middleware("auth")
         Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
         Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
         Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta")->name("terminarOCancelarVenta");
-        
-
+        Route::get('/corte-de-caja', 'CorteCajaController@formularioCorteCaja')->name('formularioCorteCaja');
     });
     Route::get('/admin', [AdminController::class,'index'])
     ->middleware('auth.admin')

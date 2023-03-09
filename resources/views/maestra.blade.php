@@ -79,7 +79,6 @@
         </div>
     </nav>
     <script type="text/javascript">
-        // Tomado de https://parzibyte.me/blog/2019/06/26/menu-responsivo-bootstrap-4-sin-dependencias/
         document.addEventListener("DOMContentLoaded", () => {
             const menu = document.querySelector("#menu"),
                 botonMenu = document.querySelector("#botonMenu");
@@ -104,16 +103,59 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel"> Corte de Caja</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+      <form method="POST" action="">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="fecha" class="col-md-4 col-form-label text-md-right">Fecha:</label>
+
+                            <div class="col-md-6">
+                                <input id="fecha" type="date" class="form-control" name="fecha" value="{{ old('fecha') }}" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="efectivo" class="col-md-4 col-form-label text-md-right">Efectivo:</label>
+
+                            <div class="col-md-6">
+                                <input id="efectivo" type="number" step="0.01" class="form-control" name="efectivo" value="{{ old('efectivo') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="tarjeta" class="col-md-4 col-form-label text-md-right">Tarjeta:</label>
+
+                            <div class="col-md-6">
+                                <input id="tarjeta" type="number" step="0.01" class="form-control" name="tarjeta" value="{{ old('tarjeta') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cheque" class="col-md-4 col-form-label text-md-right">Cheque:</label>
+
+                            <div class="col-md-6">
+                                <input id="cheque" type="number" step="0.01" class="form-control" name="cheque" value="{{ old('cheque') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Realizar Corte de Caja
+                                </button>
+                            </div>
+                        </div>
+                    </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
       </div>
     </div>
   </div>
